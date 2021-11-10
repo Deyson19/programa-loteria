@@ -1,6 +1,5 @@
 package classLibrary;
 
-import java.util.Scanner;
 
 public class Main {
 

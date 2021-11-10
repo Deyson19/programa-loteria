@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 public class Persona {
 
-    private int id, numero;
+    private int numero;
     String nombre;
 
     public Persona(String nombre) {
@@ -20,15 +20,16 @@ public class Persona {
     }
 
     public void crearBoleto() {
-        numero = (int) (Math.random() * 10000);
+        try {
+            numero = (int) (Math.random() * 10000)+1;
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No se pudo generar tu número"+e);
+        }
     }
 
     public void mostrarDatos() {
         JOptionPane.showMessageDialog(null, "Hola, tu nombre es: " + nombre);
-        JOptionPane.showMessageDialog(null, "Tu número ha sido generado correctamente, y es el: " + numero);
-
-        //System.out.println("Tu nombre es: "+nombre);
-        //System.out.println("Tu número es: "+numero);
+        //JOptionPane.showMessageDialog(null, "Tu número ha sido generado correctamente, y es el: " + numero);
     }
 
 }
