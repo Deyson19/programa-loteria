@@ -24,7 +24,11 @@ public class Loteria {
             name = (JOptionPane.showInputDialog("Por favor ingresa tu nombre: ")).toUpperCase();
             if (name.isEmpty()) {
                 JOptionPane.showMessageDialog(null, "No puedes participar sin un nombre válido");
-                System.exit(0);
+                name = (JOptionPane.showInputDialog("Por favor ingresa tu nombre: ")).toUpperCase();
+                if (name.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "No puedes participar en el sorteo");
+                    System.exit(0);
+                }
             }
         } catch (HeadlessException e) {
             JOptionPane.showMessageDialog(null, "No se pudo registrar tu nombre" + e);
